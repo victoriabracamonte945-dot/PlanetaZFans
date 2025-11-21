@@ -1,7 +1,25 @@
 body{
+    background-image: url(https://i.pinimg.com/736x/a9/9e/4c/a99e4c9698d5eafc57deff46d045f548.jpg);
     background-color: rgb(196, 233, 255);
     margin: 0px;
 }
+
+nav{
+    background-color: black;
+    padding: 15px;
+}
+
+    #NavAncho{
+        display: flex;
+        justify-content: space-between;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+
 
 header{
     background-image: url(https://i.pinimg.com/1200x/5b/78/70/5b78701ccc575954aa74de70b4b868c9.jpg);
@@ -39,6 +57,7 @@ header{
         text-shadow: 2px 2px 5px rgb(0, 0, 0);
     }
 }
+
 #CuerpoPrincipal{
     display: flex;
 
@@ -49,11 +68,69 @@ header{
     aside{
         width: 20%;
     }
+
+    h3{
+        font-family: "Lilita One", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    h2{
+             font-family: "Holtwood One SC", serif;
+        font-weight: 400;
+        font-style: normal;   
+    }
+
+    h1{
+        font-family: "Holtwood One SC", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    p{
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 15px;
+    }
 }
 
 main{
     margin: 40px;
     text-align: justify;
+}
+
+.ConocéMás{
+    font-size: 150%;
+}
+
+/*Personajes*/
+.CajaPersonajes{
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        justify-content: center;
+    }
+
+    .aVerMásPersonajes{
+        text-align: right;
+    }
+}
+
+.ImagenPersonajes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1%;
+}
+
+.ImgPersonajesDesaparecer{
+    display: none;
 }
 
 /*Acá empieza lo de los personajes*/
@@ -64,7 +141,7 @@ main{
     border-width: 1px;
     border-style: dashed;
     border-radius: 10px;
-    background-color: rgb(191, 255, 196);
+    background-color: rgb(198, 213, 255);
 }
 
 .InfoCajaPersonajes{
@@ -74,7 +151,27 @@ main{
     border-width: 1px;
     border-style:solid;
     border-radius: 10px;
-    background-color: rgb(191, 255, 196);
+    background-color: rgb(198, 213, 255);
+}
+
+
+/*Acá empieza los media query*/
+
+@media (width<450px){
+        .ImagenPersonajes{
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 450px) and (max-width: 600px) {
+    .ImagenPersonajes{
+        transform: scale(0.70);
+    }
+
+    .ImgPersonajesDesaparecer{
+    display: none;
+    }
+
 }
 
 @media (width<630px){
@@ -94,11 +191,19 @@ main{
         display: none;
     }
 
+    /*Personajes*/
+
     .InfoCajaPersonajes{
         flex-wrap: wrap;
     }
-}
 
+}
+  /*Esto es para las Imáges extras del coso de Personajes*/
+@media (min-width: 450px) and (max-width: 750px){
+    .ImgPersonajesDesaparecer{
+    display: block;
+    }
+}
 
 @media (width<400px){
     header{
