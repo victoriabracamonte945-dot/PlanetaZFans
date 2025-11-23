@@ -19,8 +19,6 @@ nav{
         }
     }
 
-
-
 header{
     background-image: url(https://i.pinimg.com/1200x/5b/78/70/5b78701ccc575954aa74de70b4b868c9.jpg);
     color: white;
@@ -100,11 +98,17 @@ main{
     text-align: justify;
 }
 
+aside{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .ConocéMás{
     font-size: 150%;
 }
 
-/*Personajes*/
+/*Acá empieza lo de los personajes*/
 .CajaPersonajes{
 
     a{
@@ -133,8 +137,6 @@ main{
     display: none;
 }
 
-/*Acá empieza lo de los personajes*/
-
 .TítulosPersonajes{
     margin-bottom: -12px;
     padding: 20px;
@@ -154,6 +156,72 @@ main{
     background-color: rgb(198, 213, 255);
 }
 
+/*Acá va lo del slider de Series*/
+
+.SliderWrapper{
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.Slider{
+    display: flex;
+    aspect-ratio: 16/9 ;
+    overflow-x: hidden; /*Esconde las weas*/
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 .25rem 0.5rem #21212126;
+    border-radius: 5px;
+}
+
+.Slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.SliderNav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.SliderNav a{
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .75;
+    transition: opacity ease 250ms;
+}
+
+.SliderNav a:hover{
+    opacity: 100%;
+}
+
+footer{
+    background-color: rgb(152, 169, 218);
+    padding: 20px;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        color: rgb(0, 0, 0);
+        font-family: "Holtwood One SC", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 300%;
+        text-align: right;
+        margin: 1%;
+    }
+}
 
 /*Acá empieza los media query*/
 
@@ -174,6 +242,12 @@ main{
 
 }
 
+@media (width<500px){
+    #imgFooter{
+        display: none;
+    }
+}
+
 @media (width<630px){
     header{
         h1{
@@ -184,6 +258,14 @@ main{
             font-size: 100%;
         }
     }
+}
+
+@media (width<700px){
+
+    footer h1{
+        font-size: 180%;
+    }
+
 }
 
 @media (width<750px){
@@ -203,6 +285,11 @@ main{
     .ImgPersonajesDesaparecer{
     display: block;
     }
+
+    .SliderWrapper{
+        width: 100%;
+    }
+
 }
 
 @media (width<400px){
